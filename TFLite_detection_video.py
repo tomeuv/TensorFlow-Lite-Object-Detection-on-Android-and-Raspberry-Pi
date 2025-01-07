@@ -85,7 +85,7 @@ if labels[0] == '???':
 # If using Edge TPU, use special load_delegate argument
 if use_TPU:
     interpreter = Interpreter(model_path=PATH_TO_CKPT,
-                              experimental_delegates=[load_delegate('libedgetpu.so.1.0')])
+                              experimental_delegates=[load_delegate(os.environ['DELEGATE_PATH'])])
     print(PATH_TO_CKPT)
 else:
     interpreter = Interpreter(model_path=PATH_TO_CKPT)
