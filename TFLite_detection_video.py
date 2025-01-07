@@ -59,12 +59,6 @@ else:
     if use_TPU:
         from tensorflow.lite.python.interpreter import load_delegate
 
-# If using Edge TPU, assign filename for Edge TPU model
-if use_TPU:
-    # If user has specified the name of the .tflite file, use that name, otherwise use default 'edgetpu.tflite'
-    if (GRAPH_NAME == 'detect.tflite'):
-        GRAPH_NAME = 'edgetpu.tflite'   
-
 # Get path to current working directory
 CWD_PATH = os.getcwd()
 
